@@ -1,0 +1,28 @@
+defines = -DUSE_UDEV -DUSE_AURA=1 -DUSE_GLIB=1 -DUSE_NSS_CERTS=1 -DUSE_X11=1 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_GNU_SOURCE -DCR_CLANG_REVISION=\"n332890-c2443155-1\" -DCR_SYSROOT_HASH=fd13169e6e1b794c6ef1e7f0fa56e30414ba1833 -DNDEBUG -DNVALGRIND -DDYNAMIC_ANNOTATIONS_ENABLED=0 -DZLIB_IMPLEMENTATION -DADLER32_SIMD_SSSE3 -DINFLATE_CHUNK_SIMD_SSE2 -DINFLATE_CHUNK_READ_64LE -DCRC32_SIMD_SSE42_PCLMUL
+include_dirs = -I../.. -Igen -I../../third_party/zlib
+cflags = -fno-strict-aliasing --param=ssp-buffer-size=4 -fstack-protector -funwind-tables -fPIC -B../../third_party/binutils/Linux_x64/Release/bin -pthread -fcolor-diagnostics -fmerge-all-constants -fcrash-diagnostics-dir=../../tools/clang/crashreports -Xclang -mllvm -Xclang -instcombine-lower-dbg-declare=0 -m64 -march=x86-64 -Wno-builtin-macro-redefined -D__DATE__= -D__TIME__= -D__TIMESTAMP__= -no-canonical-prefixes -O2 -fno-ident -fdata-sections -ffunction-sections -fno-omit-frame-pointer -g0 -ftrivial-auto-var-init=pattern -fvisibility=hidden -Xclang -add-plugin -Xclang find-bad-constructs -Xclang -plugin-arg-find-bad-constructs -Xclang check-ipc -Wheader-hygiene -Wstring-conversion -Wtautological-overlap-compare -Werror -Wall -Wno-unused-variable -Wno-missing-field-initializers -Wno-unused-parameter -Wno-c++11-narrowing -Wno-unneeded-internal-declaration -Wno-undefined-var-template -Wno-ignored-pragma-optimize -Wno-implicit-int-float-conversion -Wno-final-dtor-non-final-class -Wno-bitwise-conditional-parentheses -Wno-builtin-assume-aligned-alignment -Wno-deprecated-copy -Wno-incompatible-pointer-types
+cflags_c = -std=c11 --sysroot=../../build/linux/debian_sid_amd64-sysroot -Wno-implicit-fallthrough
+label_name = zlib
+target_out_dir = obj/third_party/zlib
+target_output_name = libchrome_zlib
+
+build obj/third_party/zlib/zlib/adler32.o: cc ../../third_party/zlib/adler32.c
+build obj/third_party/zlib/zlib/compress.o: cc ../../third_party/zlib/compress.c
+build obj/third_party/zlib/zlib/crc32.o: cc ../../third_party/zlib/crc32.c
+build obj/third_party/zlib/zlib/deflate.o: cc ../../third_party/zlib/deflate.c
+build obj/third_party/zlib/zlib/gzclose.o: cc ../../third_party/zlib/gzclose.c
+build obj/third_party/zlib/zlib/gzlib.o: cc ../../third_party/zlib/gzlib.c
+build obj/third_party/zlib/zlib/gzread.o: cc ../../third_party/zlib/gzread.c
+build obj/third_party/zlib/zlib/gzwrite.o: cc ../../third_party/zlib/gzwrite.c
+build obj/third_party/zlib/zlib/infback.o: cc ../../third_party/zlib/infback.c
+build obj/third_party/zlib/zlib/inffast.o: cc ../../third_party/zlib/inffast.c
+build obj/third_party/zlib/zlib/inftrees.o: cc ../../third_party/zlib/inftrees.c
+build obj/third_party/zlib/zlib/trees.o: cc ../../third_party/zlib/trees.c
+build obj/third_party/zlib/zlib/uncompr.o: cc ../../third_party/zlib/uncompr.c
+build obj/third_party/zlib/zlib/zutil.o: cc ../../third_party/zlib/zutil.c
+build obj/third_party/zlib/zlib/x86.o: cc ../../third_party/zlib/x86.c
+
+build obj/third_party/zlib/libchrome_zlib.a: alink obj/third_party/zlib/zlib/adler32.o obj/third_party/zlib/zlib/compress.o obj/third_party/zlib/zlib/crc32.o obj/third_party/zlib/zlib/deflate.o obj/third_party/zlib/zlib/gzclose.o obj/third_party/zlib/zlib/gzlib.o obj/third_party/zlib/zlib/gzread.o obj/third_party/zlib/zlib/gzwrite.o obj/third_party/zlib/zlib/infback.o obj/third_party/zlib/zlib/inffast.o obj/third_party/zlib/zlib/inftrees.o obj/third_party/zlib/zlib/trees.o obj/third_party/zlib/zlib/uncompr.o obj/third_party/zlib/zlib/zutil.o obj/third_party/zlib/zlib/x86.o || obj/third_party/zlib/zlib_adler32_simd.stamp obj/third_party/zlib/zlib_inflate_chunk_simd.stamp obj/third_party/zlib/zlib_crc32_simd.stamp obj/third_party/zlib/zlib_x86_simd.stamp
+  arflags = -T
+  output_extension = .a
+  output_dir = obj/third_party/zlib

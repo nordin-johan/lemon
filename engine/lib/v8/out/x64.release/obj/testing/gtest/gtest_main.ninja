@@ -1,0 +1,8 @@
+defines = -DUSE_UDEV -DUSE_AURA=1 -DUSE_GLIB=1 -DUSE_NSS_CERTS=1 -DUSE_X11=1 -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_GNU_SOURCE -DCR_CLANG_REVISION=\"n332890-c2443155-1\" -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D_FORTIFY_SOURCE=2 -DCR_SYSROOT_HASH=fd13169e6e1b794c6ef1e7f0fa56e30414ba1833 -DNDEBUG -DNVALGRIND -DDYNAMIC_ANNOTATIONS_ENABLED=0 -DGTEST_API_= -DGTEST_HAS_POSIX_RE=0 -DGTEST_LANG_CXX11=1 -DGTEST_HAS_TR1_TUPLE=0
+include_dirs = -I../.. -Igen -I../../third_party/googletest/custom -I../../third_party/googletest/src/googletest/include
+label_name = gtest_main
+target_out_dir = obj/testing/gtest
+target_output_name = gtest_main
+
+
+build obj/testing/gtest/gtest_main.stamp: stamp || obj/third_party/googletest/gtest_main.stamp obj/third_party/googletest/gtest.stamp
