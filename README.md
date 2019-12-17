@@ -13,7 +13,10 @@ Lemon is a framework for building Javascript runtime software.
 	
 	Lemon runs on a single thread by default but has support for running on multiple threads.
 	
-## Installation
+## Installing Lemon
+
+Lemon is currently only supported for Linux.
+
 __Download the repo__
 
 ``` git clone https://github.com/nordin-johan/lemon.git ```
