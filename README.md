@@ -47,7 +47,7 @@ __The example does the following:__
 3. Creates a new context and enters the context.
 4. Calls the RunJsFromFile method which executes the code inside a Javascript file.
 
-A context is an execution environment that allows Javascript to be executed. Multiple contexts can run simultaneously in separate threads.
+A ___context___ is an execution environment that allows Javascript to be executed.
 	
 ## Installing Lemon
 
