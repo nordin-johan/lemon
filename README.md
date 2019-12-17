@@ -7,7 +7,7 @@ Lemon is a framework for building Javascript runtime software.
 
 * __Object oriented__
 
-	Lemon lets you build your applications with a scaleable object oriented approach.
+	Lemon lets you build your applications with a simple and scaleable object oriented approach.
 
 * __Single and multi threaded__
 	
