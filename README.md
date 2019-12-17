@@ -29,7 +29,4 @@ __Build__
 
 ```make```
 
-<<<<<<< HEAD
-You can now run ./lemon App.js in your terminal to try it out.
-=======
 You can now run ./lemon App.js in your terminal to try it out.
