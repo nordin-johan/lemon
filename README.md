@@ -1,9 +1,9 @@
-# Lemon js
+# Lemon
 Lemon is a framework for building Javascript runtime software.
 
 * __C++ bindings__
 
-	Fully integrated support for javascript - c++ bindings and viceversa.
+	Fully integrated support for javascript > c++ bindings and viceversa.
 
 * __Object oriented__
 
@@ -29,4 +29,4 @@ __Build__
 
 ```make```
 
-You can now run ./lemon App.js in your terminal to try it out.
+You can now run ./lemon App.js in your terminal to try it out, it should print the current version of Lemon.
