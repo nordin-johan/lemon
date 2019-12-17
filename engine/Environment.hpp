@@ -29,6 +29,8 @@ class Environment {
 		Isolate* isolate;
 		Local<ObjectTemplate> global;
 
+		static void Version(const FunctionCallbackInfo<Value>& args);
+
 	public:
 
 		virtual void CreatePlatform(char* argv[]) final;
