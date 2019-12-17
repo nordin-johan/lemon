@@ -31,17 +31,20 @@ class Environment {
 
 		static void Version(const FunctionCallbackInfo<Value>& args);
 
+	protected:
+
+		virtual Local<Context> CreateLocalContext() final;
+		virtual Local<ObjectTemplate> GetGlobal() final;
+
 	public:
+		
+		Isolate* GetIsolate();
 
 		virtual void CreatePlatform(char* argv[]) final;
 		virtual void CreateVM() final;
 		virtual void ShutdownVM() final;
 
 		virtual void CreateGlobalEnvironment() final;
-		virtual Local<Context> CreateLocalContext() final;
-
-		Isolate* GetIsolate();
-		virtual Local<ObjectTemplate> GetGlobal() final;
 
 		virtual void SetupEngineEnvironment() final;
 		virtual void SetupEnvironment();
