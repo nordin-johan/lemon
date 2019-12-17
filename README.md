@@ -29,4 +29,4 @@ __Build__
 
 ```make```
 
-You can now run ./lemon App.js in your terminal to try it out, it should print the current version of Lemon.
+You can now run ```./lemon App.js``` in your terminal to try it out, it should print the current version of Lemon.
