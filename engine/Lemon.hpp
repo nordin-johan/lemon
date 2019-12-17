@@ -14,12 +14,13 @@ using v8::MaybeLocal;
 
 class Lemon : public Environment {
 
-	public:
+	protected:
 
 		virtual void ReportException(TryCatch* try_catch) final;
 		virtual bool ExecuteString(Local<String> source, const char* filename) final;
 		virtual MaybeLocal<String> ReadFile(const char* filename) final;
 		virtual bool RunJsFromFile(const char* filename);
+		
 };
 
 #endif
