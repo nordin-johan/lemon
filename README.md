@@ -28,3 +28,5 @@ __Navigate to the directory__
 __Build__
 
 ```make```
+
+You can now run ./lemon App.js in your terminal to try it out.
