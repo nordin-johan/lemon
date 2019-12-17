@@ -47,7 +47,7 @@ __The example does the following:__
 3. Creates a new context and enters the context.
 4. Calls the RunJsFromFile method which executes the code inside a Javascript file.
 
-A ___context___ is an execution environment that allows Javascript to be executed.
+A _context_ is an execution environment that allows Javascript to be executed inside the virtual machine.
 	
 ## Installing Lemon
 
