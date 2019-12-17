@@ -1,6 +1,6 @@
 #include "Environment.hpp"
 
-static void GetVersion(const FunctionCallbackInfo<Value>& args) {
+static void Version(const FunctionCallbackInfo<Value>& args) {
 	printf("Lemon v1.0.0\n");
 }
 
@@ -51,7 +51,7 @@ void Environment::SetupEngineEnvironment() {
 
 	this->GetGlobal()->Set(
 		String::NewFromUtf8(this->GetIsolate(), "version", NewStringType::kNormal).ToLocalChecked(),
-		FunctionTemplate::New(this->GetIsolate(), GetVersion)
+		FunctionTemplate::New(this->GetIsolate(), Version)
 	);
 
 }

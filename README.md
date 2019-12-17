@@ -15,7 +15,7 @@ Lemon is a framework for building Javascript runtime software.
 	
 ## Installing Lemon
 
-Lemon is currently only supported for Linux.
+Lemon currently has build support for Linux only.
 
 __Download the repo__
 
