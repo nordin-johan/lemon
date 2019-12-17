@@ -1,7 +1,7 @@
 #ifndef ENVIRONMENT
 #define ENVIRONMENT
 
-#include <assert.h>
+#include <cassert>
 #include "Helpers.hpp"
 
 #include "libplatform/libplatform.h"
@@ -14,6 +14,10 @@ using v8::Context;
 using v8::ArrayBuffer;
 using v8::Local;
 using v8::ObjectTemplate;
+using v8::NewStringType;
+using v8::FunctionTemplate;
+using v8::FunctionCallbackInfo;
+using v8::Value;
 
 class Environment {
 
@@ -37,6 +41,7 @@ class Environment {
 		Isolate* GetIsolate();
 		virtual Local<ObjectTemplate> GetGlobal() final;
 
+		virtual void SetupEngineEnvironment() final;
 		virtual void SetupEnvironment();
 		
 };

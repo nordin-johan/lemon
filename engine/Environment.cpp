@@ -1,5 +1,9 @@
 #include "Environment.hpp"
 
+static void GetVersion(const FunctionCallbackInfo<Value>& args) {
+	printf("Lemon v1.0.0\n");
+}
+
 void Environment::CreatePlatform(char* argv[]) {
 
 	V8::InitializeICUDefaultLocation(argv[0]);
@@ -42,4 +46,15 @@ Isolate * Environment::GetIsolate() {
 	return this->isolate;
 }
 
+// setup environment for the engine
+void Environment::SetupEngineEnvironment() {
+
+	this->GetGlobal()->Set(
+		String::NewFromUtf8(this->GetIsolate(), "version", NewStringType::kNormal).ToLocalChecked(),
+		FunctionTemplate::New(this->GetIsolate(), GetVersion)
+	);
+
+}
+
+// setup environment for the app
 void Environment::SetupEnvironment() {}

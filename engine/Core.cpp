@@ -20,6 +20,9 @@ int main(int argc, char* argv[]) {
 		// Create global environment object
 		app.CreateGlobalEnvironment();
 
+		// Setup engine environment
+		app.SetupEngineEnvironment();
+
 		// Call app setup environment hook
 		app.SetupEnvironment();
 
