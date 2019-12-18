@@ -73,8 +73,10 @@ There are 2 hooks in Lemon which are both used in App.cpp. The hooks are automat
 
 __App::Start()__
 
-The Start() hook is required. It is automatically called by Lemon after a new virtual machine instance has been created and starts the app inside the virtual machine. In this hook you can perform operations such as handling command line arguments, setting up one or more contexts, threads and execute javascript code.
+The App::Start() hook is required. It is automatically called by Lemon after a new virtual machine instance has been created and starts the app inside the virtual machine. In this hook you can perform operations such as handling command line arguments, setting up one or more contexts, threads and execute javascript code.
 
 __App::SetupEnvironment()__
 
-The SetupEnvironment() hook is optional. This hook is called before the App::Start() hook and allows you to add methods to the global environment before you create a context.
+The SetupEnvironment() hook is optional. This hook is called before the App::Start() hook and it allows you to bind js -> c++ methods to the global environment before you create a context in the App::Start() hook.
+
+You can access the global environment like this: ```this->GetGlobal()```. 
