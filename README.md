@@ -66,3 +66,15 @@ __Build__
 ```make```
 
 You can now run ```./lemon App.js``` in your terminal to try it out, it should print the current version of Lemon.
+
+## App Hooks
+
+There are 2 hooks in Lemon which are both used in App.cpp. The hooks are automatically invoked class methods.
+
+__App::Start()__
+
+The Start() hook is required. It is automatically called by Lemon after a new virtual machine instance has been created and starts the app inside the virtual machine. In this hook you can perform operations such as handling command line arguments, setting up one or more contexts, threads and execute javascript code.
+
+__App::SetupEnvironment()__
+
+The SetupEnvironment() hook is optional. This hook is called before the App::Start() hook and allows you to add methods to the global environment before you create a context.
