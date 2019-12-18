@@ -82,3 +82,19 @@ __App::SetupEnvironment()__
 The App::SetupEnvironment() hook is optional. This hook is called before the App::Start() hook and it allows you to bind js -> c++ methods to the global environment before you create a context in the App::Start() hook.
 
 You can access the global environment like this: ```this->GetGlobal()```. 
+
+## Methods
+
+Lemon has built on methods you can use for performing common operations.
+
+##### RunJsFromFile(const char* filename)
+
+Reads a file and executes the javascript inside the file. Returns boolean.
+
+##### ReadFile(const char* filename)
+
+Reads the content of a file. Returns a v8 MaybeLocal<String>.
+	
+##### ExecuteString(Local<String> source, const char* filename) 
+
+Executes a javascript string. Returns boolean.
