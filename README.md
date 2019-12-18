@@ -99,6 +99,6 @@ Reads the content of a file. Returns a v8 MaybeLocal<String>.
 
 Executes a javascript string. Returns boolean.
 
-## Error handling
+## Error Handling
 
 Lemon automatically handles all types of javascript errors. All errors that are not related to javascript must be handled by yourself.
