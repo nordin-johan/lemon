@@ -12,6 +12,8 @@ Lemon is a framework for building Javascript runtime software.
 * __Single and multi threaded__
 	
 	Lemon runs on a single thread by default but has support for running on multiple threads.
+	
+Video introduction: https://www.youtube.com/watch?v=5fWIf2A6Z_s
 
 ## Example
 
