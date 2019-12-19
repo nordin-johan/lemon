@@ -49,7 +49,15 @@ __The example does the following:__
 3. Creates a new context and enters the context.
 4. Calls the RunJsFromFile method which executes the code inside a Javascript file.
 
-A _context_ is an execution environment that allows Javascript to be executed inside the virtual machine.
+_A context is an execution environment that allows Javascript to be executed inside the virtual machine._
+
+* If you create a javascript file called myapp.js that looks like this:</br>
+```version()```
+
+* And then run the example lemon app with a command that look's like this:</br>
+```./lemon myapp.js```
+
+* The example app will execute the js file and print the current version of Lemon to the terminal. It does this by executing a c++ method that is bound to the javascript method ```version()```.
 	
 ## Installing Lemon
 
