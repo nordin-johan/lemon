@@ -32,10 +32,6 @@ Reads the content of a file. Returns a v8 MaybeLocal<String>.
 
 Executes a javascript string. Returns boolean.
 
-##### ToCString(const String::Utf8Value& value)
-
-Converts a Utf8Value to a C string. Returns const char.
-
 ## Error Handling
 
 Lemon automatically handles all types of javascript errors. All errors that are not related to javascript must be handled by yourself.
