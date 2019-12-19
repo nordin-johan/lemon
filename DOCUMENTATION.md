@@ -35,3 +35,15 @@ Converts a Utf8Value to a C string. Returns const char.
 ## Error Handling
 
 Lemon automatically handles all types of javascript errors. All errors that are not related to javascript must be handled by yourself.
+
+## Examples
+
+```c++
+static void HelloWorld(const FunctionCallbackInfo<Value>& args) {	
+	printf("Hello world");
+}
+
+void App::SetupEnvironment() {
+	this->CreateGlobalMethod("hello", HelloWorld);
+}
+```
