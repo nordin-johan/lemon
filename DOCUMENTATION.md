@@ -58,7 +58,7 @@ App.js
 helloworld();
 ```
 
-### Console.log()
+### Console
 
 App.cpp
 
