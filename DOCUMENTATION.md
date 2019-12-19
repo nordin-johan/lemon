@@ -57,3 +57,61 @@ App.js
 ```js
 helloworld();
 ```
+
+### Console.log()
+
+App.cpp
+
+```c++
+#include "App.hpp"
+
+using namespace v8;
+
+const char* ToCString(const String::Utf8Value& value) {
+    return *value ? *value : "<string conversion failed>";
+}
+
+static void Log(const FunctionCallbackInfo<Value>& args) {
+
+    HandleScope scope(args.GetIsolate());
+
+    String::Utf8Value str(args.GetIsolate(), args[0]);
+    const char* cstr = ToCString(str);
+
+    fprintf(stdout, "%s", cstr);
+
+    fprintf(stdout, "\n");
+    fflush(stdout);
+
+}
+
+void App::Start(int argc, char* argv[]) {
+
+	for (int i = 1; i < argc; ++i) {
+
+		// Get filename of the javascript file to run
+		const char* filename = argv[i];
+
+		// Create a new context for executing javascript code
+		Local<Context> context = this->CreateLocalContext();
+
+		// Enter the new context
+		Context::Scope contextscope(context);
+
+		this->CreateGlobalObject("console")
+			.SetPropertyMethod("log", Log)
+			.Register();
+
+		// Run the javascript file
+		this->RunJsFromFile(filename);
+
+	}
+
+}
+```
+
+App.js
+
+```js
+console.log("Hello world");
+```
