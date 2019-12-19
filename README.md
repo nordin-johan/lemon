@@ -68,39 +68,3 @@ __Build__
 ```make```
 
 You can now run ```./lemon App.js``` in your terminal to try it out, it should print the current version of Lemon.
-
-## App Hooks
-
-__App::Start()__
-
-The App::Start() hook is required. It is automatically called by Lemon after a new virtual machine instance has been created and starts the app inside the virtual machine. In this hook you can perform operations such as handling command line arguments, setting up one or more contexts, threads and execute javascript code.
-
-__App::SetupEnvironment()__
-
-The App::SetupEnvironment() hook is optional. This hook is called before the App::Start() hook and it allows you to bind js -> c++ methods to the global environment before you create a context in the App::Start() hook.
-
-You can access the global environment object like this: ```this->GetGlobal()```. 
-
-## Methods
-
-Lemon has built in methods you can use for performing common operations.
-
-##### RunJsFromFile(const char* filename)
-
-Reads a file and executes the javascript inside the file. Returns boolean.
-
-##### ReadFile(const char* filename)
-
-Reads the content of a file. Returns a v8 MaybeLocal<String>.
-	
-##### ExecuteString(Local<String> source, const char* filename) 
-
-Executes a javascript string. Returns boolean.
-
-##### ToCString(const String::Utf8Value& value)
-
-Converts a Utf8Value to a C string. Returns const char.
-
-## Error Handling
-
-Lemon automatically handles all types of javascript errors. All errors that are not related to javascript must be handled by yourself.
