@@ -1,5 +1,5 @@
 # Lemon :lemon:
-Lemon is a framework for building Javascript runtime software.
+Lemon is a framework for building Javascript runtime software in c++.
 
 * __C++ bindings__
 
