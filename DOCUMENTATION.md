@@ -97,7 +97,8 @@ void App::Start(int argc, char* argv[]) {
 
 		// Enter the new context
 		Context::Scope contextscope(context);
-
+		
+		// Create global console object and set log property
 		this->CreateGlobalObject("console")
 			.SetPropertyMethod("log", Log)
 			.Register();
