@@ -1,4 +1,6 @@
-# Documentation 
+# Documentation
+
+This document contains documentation for the Lemon framework.
 
 ## App Hooks
 
