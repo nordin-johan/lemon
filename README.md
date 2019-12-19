@@ -68,3 +68,5 @@ __Build__
 ```make```
 
 You can now run ```./lemon App.js``` in your terminal to try it out, it should print the current version of Lemon.
+
+<a href="https://github.com/nordin-johan/lemon/blob/master/DOCUMENTATION.md">Read the docs</a>
