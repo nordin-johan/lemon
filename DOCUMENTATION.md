@@ -6,11 +6,15 @@ This document contains documentation for the Lemon framework.
 
 ##### App::Start()
 
-The App::Start() hook is required. It is automatically called by Lemon after a new virtual machine instance has been created and starts the app inside the virtual machine. In this hook you can perform operations such as handling command line arguments, setting up one or more contexts, threads and execute javascript code.
+Required
+
+Called by Lemon after a new virtual machine instance has been created and starts the app inside the virtual machine. In this hook you can perform operations such as handling command line arguments, setting up one or more contexts, threads and execute javascript code.
 
 ##### App::SetupEnvironment()
 
-The App::SetupEnvironment() hook is optional. This hook is called before the App::Start() hook and it allows you to bind js >< c++ methods to the global environment before you create a context in the App::Start() hook.
+Optional
+
+Called before the App::Start() hook and it allows you to bind js >< c++ methods to the global environment before you create a context in the App::Start() hook.
 
 ## Methods
 
