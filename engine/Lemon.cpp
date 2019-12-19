@@ -102,7 +102,7 @@ void Lemon::ReportException(TryCatch* try_catch) {
 
     String::Utf8Value exception(this->GetIsolate(), try_catch->Exception());
 
-    const char* exception_string = this->ToCString(exception);
+    const char* exception_string = StaticHelpers::ToCString(exception);
     Local<Message> message = try_catch->Message();
 
     if (message.IsEmpty())
@@ -113,7 +113,7 @@ void Lemon::ReportException(TryCatch* try_catch) {
         String::Utf8Value filename(this->GetIsolate(),
         message->GetScriptOrigin().ResourceName());
 
-        const char* filename_string = this->ToCString(filename);
+        const char* filename_string = StaticHelpers::ToCString(filename);
 
         int linenum = message->GetLineNumber(this->GetIsolate()->GetCurrentContext()).FromJust();
         fprintf(stderr, "%s line %i: %s\n", filename_string, linenum, exception_string);
@@ -123,7 +123,7 @@ void Lemon::ReportException(TryCatch* try_catch) {
             message->GetSourceLine(this->GetIsolate()->GetCurrentContext()).ToLocalChecked()
         );
 
-        const char* sourceline_string = this->ToCString(sourceline);
+        const char* sourceline_string = StaticHelpers::ToCString(sourceline);
         fprintf(stderr, "%s\n", sourceline_string);
 
         int start = message->GetStartColumn(this->GetIsolate()->GetCurrentContext()).FromJust();
@@ -138,8 +138,4 @@ void Lemon::ReportException(TryCatch* try_catch) {
 
     }
 
-}
-
-const char* Lemon::ToCString(const String::Utf8Value& value) {
-    return *value ? *value : "<string conversion failed>";
 }

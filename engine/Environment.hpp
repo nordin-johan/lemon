@@ -1,6 +1,8 @@
 #ifndef ENVIRONMENT
 #define ENVIRONMENT
 
+#include "StaticHelpers.hpp"
+
 #include <cassert>
 #include "libplatform/libplatform.h"
 #include <v8.h>

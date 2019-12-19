@@ -6,6 +6,7 @@ define INCLUDE
 	engine/Core.cpp
 	engine/Environment.cpp
 	engine/Lemon.cpp
+	engine/StaticHelpers.cpp
 	engine/ObjectCreator.cpp
 endef
 
