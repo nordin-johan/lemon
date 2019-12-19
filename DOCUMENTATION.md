@@ -10,7 +10,7 @@ The App::Start() hook is required. It is automatically called by Lemon after a n
 
 ##### App::SetupEnvironment()
 
-The App::SetupEnvironment() hook is optional. This hook is called before the App::Start() hook and it allows you to bind js -> c++ methods to the global environment before you create a context in the App::Start() hook.
+The App::SetupEnvironment() hook is optional. This hook is called before the App::Start() hook and it allows you to bind js >< c++ methods to the global environment before you create a context in the App::Start() hook.
 
 ## Methods
 
