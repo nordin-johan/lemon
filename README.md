@@ -71,8 +71,6 @@ You can now run ```./lemon App.js``` in your terminal to try it out, it should p
 
 ## App Hooks
 
-There are 2 hooks in Lemon which are both used in App.cpp. The hooks are automatically invoked class methods.
-
 __App::Start()__
 
 The App::Start() hook is required. It is automatically called by Lemon after a new virtual machine instance has been created and starts the app inside the virtual machine. In this hook you can perform operations such as handling command line arguments, setting up one or more contexts, threads and execute javascript code.
@@ -85,7 +83,7 @@ You can access the global environment object like this: ```this->GetGlobal()```.
 
 ## Methods
 
-Lemon has built on methods you can use for performing common operations.
+Lemon has built in methods you can use for performing common operations.
 
 ##### RunJsFromFile(const char* filename)
 
