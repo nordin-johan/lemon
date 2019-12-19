@@ -19,7 +19,7 @@ Video introduction: https://www.youtube.com/watch?v=5fWIf2A6Z_s
 
 A simple example of an application written in Lemon looks like this:
 
-```
+```c++
 void App::Start(int argc, char* argv[]) {
 
 	for (int i = 1; i < argc; ++i) {
