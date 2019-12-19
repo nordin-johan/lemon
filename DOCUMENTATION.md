@@ -89,16 +89,12 @@ App.cpp
 
 using namespace v8;
 
-const char* ToCString(const String::Utf8Value& value) {
-    return *value ? *value : "<string conversion failed>";
-}
-
 static void Log(const FunctionCallbackInfo<Value>& args) {
 
     HandleScope scope(args.GetIsolate());
 
     String::Utf8Value str(args.GetIsolate(), args[0]);
-    const char* cstr = ToCString(str);
+    const char* cstr = StaticHelpers::ToCString(str);
 
     fprintf(stdout, "%s", cstr);
 
