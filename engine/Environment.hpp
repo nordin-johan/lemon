@@ -2,8 +2,6 @@
 #define ENVIRONMENT
 
 #include <cassert>
-#include "Helpers.hpp"
-
 #include "libplatform/libplatform.h"
 #include <v8.h>
 
@@ -18,6 +16,7 @@ using v8::NewStringType;
 using v8::FunctionTemplate;
 using v8::FunctionCallbackInfo;
 using v8::Value;
+using v8::String;
 
 class Environment {
 

@@ -6,7 +6,6 @@ define INCLUDE
 	engine/Core.cpp
 	engine/Environment.cpp
 	engine/Lemon.cpp
-	engine/Helpers.cpp
 endef
 
 define APP

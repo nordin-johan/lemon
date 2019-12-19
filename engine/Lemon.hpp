@@ -11,6 +11,7 @@ using v8::Script;
 using v8::ScriptOrigin;
 using v8::NewStringType;
 using v8::MaybeLocal;
+using v8::String;
 
 class Lemon : public Environment {
 
@@ -20,6 +21,7 @@ class Lemon : public Environment {
 		virtual bool ExecuteString(Local<String> source, const char* filename) final;
 		virtual MaybeLocal<String> ReadFile(const char* filename) final;
 		virtual bool RunJsFromFile(const char* filename);
+		virtual const char* ToCString(const String::Utf8Value& value) final;
 		
 };
 
