@@ -4,13 +4,13 @@ This document contains documentation for the Lemon framework.
 
 ## App Hooks
 
-##### App::Start()
+### App::Start()
 
 Required
 
 Called by Lemon after a new virtual machine instance has been created and starts the app inside the virtual machine. In this hook you can perform operations such as handling command line arguments, setting up one or more contexts, threads and execute javascript code.
 
-##### App::SetupEnvironment()
+### App::SetupEnvironment()
 
 Optional
 
@@ -20,15 +20,15 @@ Called before the App::Start() hook and it allows you to bind js >< c++ methods 
 
 Lemon has built in methods you can use for performing common operations.
 
-##### RunJsFromFile(const char* filename)
+### RunJsFromFile(const char* filename)
 
 Reads a file and executes the javascript inside the file. Returns boolean.
 
-##### ReadFile(const char* filename)
+### ReadFile(const char* filename)
 
 Reads the content of a file. Returns a v8 MaybeLocal<String>.
 	
-##### ExecuteString(Local<String> source, const char* filename) 
+### ExecuteString(Local<String> source, const char* filename) 
 
 Executes a javascript string. Returns boolean.
 
