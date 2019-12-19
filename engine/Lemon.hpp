@@ -2,6 +2,7 @@
 #define LEMON
 
 #include "Environment.hpp"
+#include "ObjectCreator.hpp"
 
 using v8::TryCatch;
 using v8::Message;
@@ -22,7 +23,10 @@ class Lemon : public Environment {
 		virtual MaybeLocal<String> ReadFile(const char* filename) final;
 		virtual bool RunJsFromFile(const char* filename);
 		virtual const char* ToCString(const String::Utf8Value& value) final;
-		
+
+		virtual void CreateGlobalMethod(const char* methodname, void (*callback)(const FunctionCallbackInfo<Value>& args)) final;
+		virtual ObjectCreator CreateGlobalObject(const char* objectname) final;
+
 };
 
 #endif

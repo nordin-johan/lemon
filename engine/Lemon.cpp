@@ -1,5 +1,21 @@
 #include "Lemon.hpp"
 
+void Lemon::CreateGlobalMethod(const char* methodname, void (*callback)(const FunctionCallbackInfo<Value>& args)) {
+
+    this->GetGlobal()->Set(
+        String::NewFromUtf8(this->GetIsolate(), methodname, NewStringType::kNormal).ToLocalChecked(),
+        FunctionTemplate::New(this->GetIsolate(), callback)
+    );
+
+}
+
+ObjectCreator Lemon::CreateGlobalObject(const char* objectname) {
+
+    ObjectCreator objectCreator(this->GetIsolate(), objectname);
+    return objectCreator;
+
+}
+
 MaybeLocal<String> Lemon::ReadFile(const char* filename) {
 
     FILE* file = fopen(filename, "rb");
