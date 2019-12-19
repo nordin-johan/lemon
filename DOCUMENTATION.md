@@ -38,12 +38,22 @@ Lemon automatically handles all types of javascript errors. All errors that are 
 
 ## Examples
 
+### Hello World
+
+App.cpp
+
 ```c++
 static void HelloWorld(const FunctionCallbackInfo<Value>& args) {	
 	printf("Hello world");
 }
 
 void App::SetupEnvironment() {
-	this->CreateGlobalMethod("hello", HelloWorld);
+	this->CreateGlobalMethod("helloworld", HelloWorld);
 }
+```
+
+App.js
+
+```js
+helloworld();
 ```
