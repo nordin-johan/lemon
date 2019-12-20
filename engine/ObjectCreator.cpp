@@ -3,8 +3,8 @@
 ObjectCreator::ObjectCreator(Isolate * isolate, const char* objectname) {
 
 	this->isolate = isolate;
-	this->name = String::NewFromUtf8(this->isolate, objectname, NewStringType::kNormal).ToLocalChecked();
 	this->ObjectInstance = ObjectTemplate::New(this->isolate);
+	this->name = String::NewFromUtf8(this->isolate, objectname, NewStringType::kNormal).ToLocalChecked();
 
 }
 
