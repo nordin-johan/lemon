@@ -3,7 +3,7 @@ Lemon is a framework for building Javascript runtime software, built on the Chro
 
 * __C++ bindings__
 
-	Integrated support for javascript >< c++ bindings.
+	Integrated support for javascript to c++ bindings and viceversa.
 
 * __Object oriented__
 
